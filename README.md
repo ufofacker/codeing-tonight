@@ -27,3 +27,4 @@
 ### 终极目标
 > 希望在未来经济实力允许的情况下可以组织以编程技术交流，技术答疑为核心内容的线上线下活动，从而为每一个开发者提供更好的技术学习，技术深造的生活服务圈。
 
+* 说明：Coding-Tonight项目基于vue-element-admin开发。要了解更多，请移步到[vue-element-admin项目](https://github.com/PanJiaChen/vue-element-admin)  *
