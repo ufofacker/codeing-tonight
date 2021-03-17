@@ -54,8 +54,6 @@
         "chokidar": "2.1.5",
         "connect": "3.6.6",
         "html-webpack-plugin": "3.2.0",
-        "husky": "1.3.1",
-        "lint-staged": "8.1.5",
         "mockjs": "1.0.1-beta3",
         "plop": "2.3.0",
         "runjs": "4.3.2",
@@ -77,19 +75,11 @@
     },
     "keywords": [
         "vue",
-        "admin",
-        "dashboard",
-        "element-ui",
-        "boilerplate",
-        "admin-template",
-        "management-system"
+        "html",
+        "javascript",
+        "nodejs"
     ],
     "license": "MIT",
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ufofacker/codeing-tonight.git"
