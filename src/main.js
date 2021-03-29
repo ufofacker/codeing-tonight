@@ -1,53 +1,36 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'; //操作cookie的库
 
-import 'normalize.css/normalize.css' // a modern alternative to CSS resets
+import 'normalize.css/normalize.css'; // 兼容不同浏览器样式
 
-import Element from 'element-ui'
-import './styles/element-variables.scss'
-import enLang from 'element-ui/lib/locale/lang/en'// 如果使用中文语言包请默认支持，无需额外引入，请删除该依赖
+import Element from 'element-ui'; //element组件库
+import './styles/element-variables.scss'; //element主题样式配置
+import '@/styles/index.scss'; //全局样式
 
-import '@/styles/index.scss' // global css
+import App from './App';
+import store from './store';
+import router from './router';
 
-import App from './App'
-import store from './store'
-import router from './router'
+import './icons'; //图标
+import './permission'; // 权限控制文件
+import './utils/error-log'; // 错误日志
 
-import './icons' // icon
-import './permission' // permission control
-import './utils/error-log' // error log
+import * as filters from './filters'; // 全局过滤器
+Vue.use (Element, {
+  size: Cookies.get ('size') || 'medium', //设置element组件尺寸
+});
 
-import * as filters from './filters' // global filters
+// 注册全局过滤器
+Object.keys (filters).forEach (key => {
+  Vue.filter (key, filters[key]);
+});
 
-/**
- * If you don't want to use mock-server
- * you want to use MockJs for mock api
- * you can execute: mockXHR()
- *
- * Currently MockJs will be used in the production environment,
- * please remove it before going online ! ! !
- */
-if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
-}
+Vue.config.productionTip = false; //阻止启动生产消息
 
-Vue.use(Element, {
-  size: Cookies.get('size') || 'medium', // set element-ui default size
-  locale: enLang // 如果使用中文，无需设置，请删除
-})
-
-// register global utility filters
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
-
-Vue.config.productionTip = false
-
-new Vue({
+new Vue ({
   el: '#app',
   router,
   store,
-  render: h => h(App)
-})
+  render: h => h (App),
+});

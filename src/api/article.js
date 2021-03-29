@@ -1,41 +1,41 @@
-import request from '@/utils/request'
+import request from '@/utils/request';
 
-export function fetchList(query) {
-  return request({
-    url: '/vue-element-admin/article/list',
+export function fetchList (query) {
+  return request ({
+    url: '/coding-tonight/article/list',
     method: 'get',
-    params: query
-  })
+    params: query,
+  });
 }
 
-export function fetchArticle(id) {
-  return request({
-    url: '/vue-element-admin/article/detail',
+export function fetchArticle (id) {
+  return request ({
+    url: '/coding-tonight/article/detail',
     method: 'get',
-    params: { id }
-  })
+    params: {id},
+  });
 }
 
-export function fetchPv(pv) {
-  return request({
-    url: '/vue-element-admin/article/pv',
+export function fetchPv (pv) {
+  return request ({
+    url: '/coding-tonight/article/pv',
     method: 'get',
-    params: { pv }
-  })
+    params: {pv},
+  });
 }
 
-export function createArticle(data) {
-  return request({
-    url: '/vue-element-admin/article/create',
+export function createArticle (data) {
+  return request ({
+    url: '/coding-tonight/article/create',
     method: 'post',
-    data
-  })
+    data,
+  });
 }
 
-export function updateArticle(data) {
-  return request({
-    url: '/vue-element-admin/article/update',
+export function updateArticle (data) {
+  return request ({
+    url: '/coding-tonight/article/update',
     method: 'post',
-    data
-  })
+    data,
+  });
 }

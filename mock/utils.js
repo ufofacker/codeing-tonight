@@ -2,22 +2,22 @@
  * @param {string} url
  * @returns {Object}
  */
-function param2Obj(url) {
-  const search = decodeURIComponent(url.split('?')[1]).replace(/\+/g, ' ')
+function param2Obj (url) {
+  const search = decodeURIComponent (url.split ('?')[1]).replace (/\+/g, ' ');
   if (!search) {
-    return {}
+    return {};
   }
-  const obj = {}
-  const searchArr = search.split('&')
-  searchArr.forEach(v => {
-    const index = v.indexOf('=')
+  const obj = {};
+  const searchArr = search.split ('&');
+  searchArr.forEach (v => {
+    const index = v.indexOf ('=');
     if (index !== -1) {
-      const name = v.substring(0, index)
-      const val = v.substring(index + 1, v.length)
-      obj[name] = val
+      const name = v.substring (0, index);
+      const val = v.substring (index + 1, v.length);
+      obj[name] = val;
     }
-  })
-  return obj
+  });
+  return obj;
 }
 
 /**
@@ -27,22 +27,29 @@ function param2Obj(url) {
  * @param {Object} source
  * @returns {Object}
  */
-function deepClone(source) {
+function deepClone (source) {
   if (!source && typeof source !== 'object') {
-    throw new Error('error arguments', 'deepClone')
+    throw new Error ('error arguments', 'deepClone');
   }
-  const targetObj = source.constructor === Array ? [] : {}
-  Object.keys(source).forEach(keys => {
+  const targetObj = source.constructor === Array ? [] : {};
+  Object.keys (source).forEach (keys => {
     if (source[keys] && typeof source[keys] === 'object') {
-      targetObj[keys] = deepClone(source[keys])
+      targetObj[keys] = deepClone (source[keys]);
     } else {
-      targetObj[keys] = source[keys]
+      targetObj[keys] = source[keys];
     }
-  })
-  return targetObj
+  });
+  return targetObj;
 }
-
+function bindTextToElement (
+  text = '',
+  ele = 'span',
+  cssClass = 'article__font--highlight'
+) {
+  return `<${ele} class="${cssClass}">${text}</${ele}>`;
+}
 module.exports = {
   param2Obj,
-  deepClone
-}
+  deepClone,
+  bindTextToElement,
+};

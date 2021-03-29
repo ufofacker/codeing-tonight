@@ -1,17 +1,17 @@
-import request from '@/utils/request'
+import request from '@/utils/request';
 
-export function searchUser(name) {
-  return request({
-    url: '/vue-element-admin/search/user',
+export function searchUser (name) {
+  return request ({
+    url: '/coding-tonight/search/user',
     method: 'get',
-    params: { name }
-  })
+    params: {name},
+  });
 }
 
-export function transactionList(query) {
-  return request({
-    url: '/vue-element-admin/transaction/list',
+export function transactionList (query) {
+  return request ({
+    url: '/coding-tonight/transaction/list',
     method: 'get',
-    params: query
-  })
+    params: query,
+  });
 }
