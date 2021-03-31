@@ -88,6 +88,9 @@ export default {
   created() {
     this.getList()
   },
+  mounted(){
+    //  debugger
+  },
   methods: {
     getList() {
       this.loading = true

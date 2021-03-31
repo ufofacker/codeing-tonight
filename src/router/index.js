@@ -207,7 +207,7 @@ export const asyncRoutes = [
   {
     path: '/browser',
     component: Layout,
-    redirect: '/browser/principle',
+    redirect: '/browser/briefIntroduction',
     name: 'Browser',
     meta: {
       title: '浏览器',
@@ -278,6 +278,27 @@ export const asyncRoutes = [
           icon: 'list',
         },
         props: {compName: 'jsExcuteRule'},
+      },
+    ],
+  },
+  {
+    path: '/expandKnowledge',
+    component: Layout,
+    redirect: '/expandKnowledge/optimizeWeb',
+    name: 'ExpandKnowledge',
+    meta: {
+      title: '拓展知识',
+      icon: 'el-icon-s-help',
+    },
+    children: [
+      {
+        path: 'optimizeWeb',
+        component: () => import ('@/views/expand-knowledge'),
+        meta: {
+          title: '前端性能优化',
+          icon: 'list',
+        },
+        props: {compName: 'optimizeWeb'},
       },
     ],
   },

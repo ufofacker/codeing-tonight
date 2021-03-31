@@ -6,7 +6,15 @@ const role = require ('./role');
 const article = require ('./article');
 const search = require ('./remote-search');
 const browser = require ('./browser');
-const mocks = [...user, ...role, ...article, ...search, ...browser];
+const expandKnowledge = require ('./expandKnowledge');
+const mocks = [
+  ...user,
+  ...role,
+  ...article,
+  ...search,
+  ...browser,
+  ...expandKnowledge,
+];
 
 // for front mock
 // please use it cautiously, it will redefine XMLHttpRequest,

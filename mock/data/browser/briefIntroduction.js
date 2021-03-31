@@ -44,13 +44,20 @@ module.exports = {
     {
       label: '5.浏览器渲染流程',
       content: `①渲染进程将HTML解析成DOMTree。</br>` +
-        `②渲染引擎将CSS样式表解析成styleSheets，通过计算生成元素节点的样式（ComputedStyle）。</br>` +
-        `③创建布局树（LayoutTree），并计算元素的布局信息。</br>` +
+        `②渲染引擎将CSS样式表解析成styleSheets，通过计算（Recalculate Style）生成元素节点的样式（ComputedStyle）。</br>` +
+        `③创建布局树（LayoutTree），并计算元素的布局信息。这一步进行的操作即是“重排或称为回流”（Reflow）</br>` +
         `④对布局进行分层，并生成分层树（LayerTree）</br>` +
         `⑤为每个图层绘制列表，并将其提交到合成线程</br>` +
-        `⑥合成线程将图层分成图块（Tile），并在光栅化线程池中将图块转换成位图</br>` +
+        `⑥合成线程将图层分成图块（Tile），并在光栅化线程池中将图块转换成位图。这一步进行的操作即是“重绘”（Paint）</br>` +
         `⑦合成线程发送制图块命令DrawQuad给浏览器进程</br>` +
-        `⑧浏览器进程根据DrawQuad消息生成页面，并显示到显示器上。</br>`,
+        `⑧浏览器进程根据DrawQuad消息生成（Composite Layers）页面，并显示到显示器上。</br>`,
+    },
+    {
+      label: '6.界面图层',
+      content: `${bindTextToElement ('浏览器中的界面是由一个或者多个图层组成的，而每个图层都会包含一个或者多个DOM节点。')}浏览器一般在以下几种情况下会创建新的图层来满足需要：</br>` +
+        `①元素的样式拥有3D变换的CSS属性，如：“transform: translate3d(20px, 20px, 20px);”；</br>` +
+        `②html中使用了canvas、video标签</br>` +
+        `③CSS样式中使用了will-change属性来告知浏览器将会产生的变化，从而使得浏览器可以提前为将要产生的变化做好优化准备工作。</br>`,
     },
   ],
 };
