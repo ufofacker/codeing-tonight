@@ -42,7 +42,6 @@ export default {
 .simple-article-part {
   margin-bottom: 0;
   color: $color-grey;
-
   .main-label-box {
     text-align: center;
   }

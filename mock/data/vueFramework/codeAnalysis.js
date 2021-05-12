@@ -4,7 +4,7 @@ const bindTextToElement = utils.bindTextToElement;
 module.exports = {
   list: [
     {
-      label: '1.CSS阻塞问题',
+      label: '1ddd.CSS阻塞问题',
       content: `CSS的引用方式有三种方式，分别是：${bindTextToElement ('①link标签外部引入，②通过style标签嵌入html，③通过style标签属性定义的内联样式')}，这三种方式均不会阻塞DOM解析，但是通过外部引入的方式会阻塞浏览器渲染，而且也会阻塞后面js脚本的执行。</br>` +
         `${bindTextToElement ('优化方式')}：①可以通过压缩外部CSS文件，②多个CSS文件合并，③通过CDN节点提升加载速度，④优化CSS源代码的结构。可以用这几个方式来降低外部样式表的加载时常，从而达到优化效果。</br>`,
     },

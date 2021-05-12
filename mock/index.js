@@ -7,6 +7,7 @@ const article = require ('./article');
 const search = require ('./remote-search');
 const browser = require ('./browser');
 const expandKnowledge = require ('./expandKnowledge');
+const vueFramework = require ('./vueFramework');
 const mocks = [
   ...user,
   ...role,
@@ -14,6 +15,7 @@ const mocks = [
   ...search,
   ...browser,
   ...expandKnowledge,
+  ...vueFramework,
 ];
 
 // for front mock

@@ -303,6 +303,27 @@ export const asyncRoutes = [
     ],
   },
   {
+    path: '/vueFramework',
+    component: Layout,
+    redirect: '/vueFramework/codeAnalysis',
+    name: 'VueFramework',
+    meta: {
+      title: 'Vue技术栈',
+      icon: 'el-icon-s-help',
+    },
+    children: [
+      {
+        path: 'codeAnalysis',
+        component: () => import ('@/views/vue-framework'),
+        meta: {
+          title: 'Vue框架源码分析',
+          icon: 'list',
+        },
+        props: {compName: 'codeAnalysis'},
+      },
+    ],
+  },
+  {
     path: '/tab',
     component: Layout,
     children: [
